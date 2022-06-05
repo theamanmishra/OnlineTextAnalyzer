@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Online Text Analyzer</title>
+</head>
+<body>
+    <div class="topbar">
+        <ul>
+            <a class="topbarlink active" href="#overview">OVERVIEW</a>
+            <a class="topbarlink" href="#methodology">METHODOLOGY</a>
+            <a class="topbarlink" href="#results">RESULTS</a>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <div class="sidebartop">About Me</div>
+        <img src="images/img-logo.jpg" alt="Aman Mishra photo" class="imglogo">
+        <p>Hi! My name is Aman Mishra. I am currently pursuing a Bachelor's degree with a major in Mechanical Engineering and a minor in Computer Science and Engineering from IIT Bombay.</p>
+        <p>The fields of Data Science and Artificial Intelligence interest me a lot, among others. I have got a chance to work with numerical, image, sound and text data.</p>
+        <ul>
+            <li>
+                <a href="mailto:amanmishrajpr@gmail.com">
+                    <i class="fa fa-envelope-o" style="font-size: 30px; color: white;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/amanmishrajpr/">
+                    <i class="fa fa-github" style="font-size: 30px; color:white;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://in.linkedin.com/in/itsamanmishra">
+                    <i class="fa fa-linkedin" style="font-size: 30px; color:white;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/geekyuchiha">
+                    <i class="fa fa-facebook-square" style="font-size: 30px; color:white;"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="overview">
+            <h1 style="text-align: center; font-size: 25px;">Natural Language Processing based</h1>
+            <h1 style="text-align: center; font-size: 40px;">Online Text Analyzer</h1>
+            <p style="text-align: center; font-size: 20px;">Project Guide:</p>
+            <a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Asim%20Tewari" style="display: block; text-align: center; font-size: 20px; position: relative; top: -15px;">Dr. Asim Tewari</a>
+            <p style="text-align: center; font-size: 20px; position: relative; top: -30px;">Mechanical Engineering Department, IIT Bombay</p>
+            <h3 style="text-align: center; font-size: 25px; margin: 0; padding: 0;">Overview</h3>
+            <p style="font-size: 18px; text-align: justify;">A software is developed which would help in the analysis of large amounts of unindexed data written in English language. The software can be accessed by clicking <a href="http://asimtewari.com/abstractor/"> here</a>. The input text is first split into several small sections. This splitting happens automatically if there are several topic markers ("T o p i c #") or sub-topic markers (" &nbsp;&nbsp;&nbsp;&nbsp;#.") present (# is any number). In the absence of sub-topic markers splitting takes place according to newline characters. Users can specify the number of paragraphs that they want to be clubbed in one section. After this section splitting, specified number of keywords are extracted from each section. A summary comprising the specified number of sentences is also extracted from each section. Finally, each section is compared with all the other sections to calculate the degree of similarity among them and the specified number of most similar sections are displayed for every section.</p>
+            <p style="font-size: 18px; text-align: justify;">For example an input file like the one below gets converted to the output image shown after it.</p>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/input-file.jpg" alt="Input File Example" style="width:1050px; border: 1px solid black; overflow: auto;">
+            </div>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/output-page.png" alt="Output Example" style="width:1050px; border: 1px solid black; margin-top:20px;">
+            </div>
+        </div>
+        <div id="methodology">
+            <h3 style="text-align: center; font-size: 25px; margin: 0; padding: 0;">Methdology</h3>
+            <p style="font-size: 18px; text-align: justify;">The following flow chart summarises the overall working of the software:</p>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/overallworking.jpg" alt="Overall working flowchart" style="width: 900px; overflow: auto;">
+            </div>
+            <p style="font-size: 18px; text-align: justify;">The following flow chart summarises the working of the text analyzer part of the software:</p>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/textanalyzerflowchart.jpg" alt="Text analyzer working flowchart" style="width: 700px; overflow: auto;">
+            </div>
+            <p style="font-size: 18px; text-align: justify;">The above pipeline is developed by three widely used Python libraries - Gensim, NLTK and spaCy. The pre-processing with NLTK and spaCy includes tokenization, stopwords removal, multiple whitespaces removal, accented characters removal, Parts of Speech (POS) tagging and lemmatization. Pre-processing with Gensim also performs these tasks except accented character removal and POS tagging. Keywords extraction and summarization with Gensim is done by using its implementation of TextRank. In case of NLTK and spaCy there are two bag-of-words based models to perform these tasks - a word occurence frequency based model and a tf-idf based model. Text similarity with Gensim is calculated by using Latent Semantic Indexing. With NLTK and spaCy this is calculated by a cosine based approach.</p>
+            <p style="font-size: 18px; text-align: justify;"></p>
+        </div>
+        <div id="results">
+            <h3 style="text-align: center; font-size: 25px; margin: 0; padding: 0;">Results</h3>
+            <p style="font-size: 18px; text-align: justify;">A lot of files with varying number of words were analysed using this software to produce the following graphs:</p>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/preprocessing.jpg" alt="A graph between the execution times versus number of words in the input file for different libraries" style="width: 600px; overflow: auto;">
+            </div>
+            <p style="font-size: 18px; text-align: justify;">NLTK and spaCy perform the same pre-processing tasks and spaCy takes much less time as compared to NLTK. The pre-processing tasks performed by Gensim are different from those of NLTK and spaCy. There is no POS tagging happening with Gensim. So the lower time with Gensim does not mean that its pre-processing is more efficient than that of NLTK and spaCy.</p>
+            <div style="overflow:auto; margin:0; padding:0; text-align: center;">
+                <img src="images/kwsumm.jpg" alt="A graph between the execution times versus number of words in the input file for different libraries" style="width: 600px; overflow: auto;">
+            </div>
+            <p style="font-size: 18px; text-align: justify;">The tf-idf based keywords extraction and summarization with spaCy takes lesser time as compared to TextRank with Gensim.</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/javascript.js"></script>
+</body>
+</html>
