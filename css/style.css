@@ -1,0 +1,119 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    z-index: 2;
+    top: 0;
+    padding: 0 10px 0 10px;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    overflow: auto;
+}
+
+.sidebartop{
+    color: white;
+    font-size: 30px;
+    height: 40px;
+}
+
+.imglogo{
+    margin-top: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sidebar ul{
+    margin: 40px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar ul li{
+    display: inline-block;
+    padding: 10px
+}
+
+.topbar{
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+}
+
+.topbar ul{
+    margin: 0;
+    padding: 0;
+}
+
+.topbar ul a, .topbar ul a:visited{
+    color: white;
+    margin-right: 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.topbar ul a:hover{
+    color: black;
+    background-color: white;
+}
+
+.topbar ul a.active{
+    color: black;
+    background-color: white;
+}
+
+.content{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.content div{
+    padding-top: 40px;
+    color: black;
+}
+
+/* RESPONSIVE RULES */
+
+@media screen and (min-width: 769px){
+    .topbar ul{
+        margin-left: 220px;
+    }
+    .topbar ul a, .topbar ul a:visited{
+        padding: 11px 20px;
+    }
+    .content div{
+        margin-left: 220px;
+    }
+    .sidebar{
+        width: 200px;
+        height: 100%;
+        position: fixed;
+    }
+    .sidebartop{
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .topbar{
+        font-size: 14px;
+    }
+    .topbar ul a, .topbar ul a:visited{
+        padding: 12px 15px;
+    }
+    .sidebar{
+        margin-top: 40px;
+    }
+    .sidebartop{
+        margin-top: 20px;
+    }
+}
